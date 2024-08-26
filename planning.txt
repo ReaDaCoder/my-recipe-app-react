@@ -6,6 +6,7 @@ Once the user is on the home page:
 1. there will be a search bar for user to search ro recipes search
 2. the will be an option for the user to add more recipes
 
+There should be a page where the user will ne allowed to add new recipes
 One the user clicks on a recipe that they want to try the will get more details of the recipe.
 1. Name of dish
 2.The preperation time
