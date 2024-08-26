@@ -1,0 +1,14 @@
+Display UI
+User will see the landing page, which is the login page
+There will be an option below the the log in page where the user can register of they do not have an account
+Once the user is registered/ logged in they will automatically be redirected to the homepage
+Once the user is on the home page:
+1. there will be a search bar for user to search ro recipes search
+2. the will be an option for the user to add more recipes
+
+One the user clicks on a recipe that they want to try the will get more details of the recipe.
+1. Name of dish
+2.The preperation time
+3.List of ingredients
+4. Cooking time
+5. Servings
