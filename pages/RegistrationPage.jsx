@@ -1,5 +1,15 @@
-import React from "react"
+import React from "react";
 function RegistrationPage(){
+
+    const userRegistration = (ev) => {
+        ev.preventDefault();
+        let user = {
+            name: ev.target.form.name.value,
+            surname: ev.target.form.surname.value,
+            email: ev.target.form.email.value,
+            cell: ev.target.form.password.value
+        };
+    }
     return(
         <div className="signup-box">
             <h1>Sign up</h1>
@@ -12,7 +22,7 @@ function RegistrationPage(){
                 <button>Sign Up</button>
             </form>
         </div>
-    )
+    );
 }
 
 export default RegistrationPage
