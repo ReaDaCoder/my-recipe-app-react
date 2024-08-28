@@ -2,7 +2,10 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate, Link} from 'react-router-dom';
 
-export default function HomePage(){
+export default function HomePage(){ 
+  function handleLogin(){
+    
+  }
     return(
         <div className="homepage">
             <div className="container text-center">
