@@ -3,3 +3,30 @@ Create component that will get user infor details
 Create a component for the serach bar
 A component that will get the recipe that the user want to save
 A component that will store the local storage
+
+
+// Initialize key variables for the Recipe App
+SET apiKey = "YOUR_API_KEY"  // API key if using a service that requires it (optional)
+SET apiEndpoint = "YOUR_API_ENDPOINT"  // Base URL for JSON server or API for managing recipes
+
+// Initialize variables for managing user and recipe data
+SET userInput  // Variable to get input from the user (e.g., for searching or adding recipes)
+SET recipeDisplayElement = document.getElementById('recipe-display')  // Element to display recipes
+SET userDisplayElement = document.getElementById('user-display')  // Element to display user information
+
+// Variables for user management
+SET userLoggedIn = false  // Boolean to track user login status
+SET currentUser = null  // Variable to hold current user details
+
+ // Initialize key variables for the Recipe App
+SET apiKey = "YOUR_API_KEY"  // API key if using a service that requires it (optional)
+SET apiEndpoint = "YOUR_API_ENDPOINT"  // Base URL for JSON server or API for managing recipes
+
+// Initialize variables for managing user and recipe data
+SET userInput  // Variable to get input from the user (e.g., for searching or adding recipes)
+SET recipeDisplayElement = document.getElementById('recipe-display')  // Element to display recipes
+SET userDisplayElement = document.getElementById('user-display')  // Element to display user information
+
+// Variables for user management
+SET userLoggedIn = false  // Boolean to track user login status
+SET currentUser = null  // Variable to hold current user details
