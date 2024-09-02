@@ -8,7 +8,6 @@ export default function HomePage(){
   }
     return(
         <div className="loginpage">
-          <img src="logo-recipe.JPG" alt="" width="150px"/>
             <div className="container text-center">
   <div className="row">
     <div className="col">
