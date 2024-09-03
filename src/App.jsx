@@ -7,6 +7,7 @@ import RegistrationPage from '../pages/RegistrationPage';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import ProtectedRoutes from '../pages/ProtectedRoutes';
+import AddRecipePage from '../pages/AddRecipePage';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
           <Route path="/RegistrationPage" element={<RegistrationPage/>} />
           <Route element={<ProtectedRoutes/>}/>
           <Route element={<HomePage/>} path="/HomePage"/>
+          <Route element={<AddRecipePage/>} path="/AddRecipePage"/>
         </Routes>
         </BrowserRouter>
     </>

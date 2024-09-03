@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "../src/App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function RegistrationPage() {
   const [user, setUser] = useState({
@@ -22,19 +24,18 @@ function RegistrationPage() {
   function AddUser(ev) {
     ev.preventDefault();
     
-    // Basic form validation
+  
     if (user.password !== user.confirmPassword) {
       setError("Passwords do not match!");
       return;
     }
     
-    // Clear any previous errors
+  
     setError("");
 
-    // Send user data to the server (mocked as a console log for now)
+
     console.log("User registered:", user);
 
-    // Optionally, clear the form fields after submission
     setUser({
       name: "",
       surname: "",
@@ -88,6 +89,11 @@ function RegistrationPage() {
           onChange={handleInputChange}
           required
         /><br/>
+        <div className="card">
+                                <img src="https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/3da39-no-user-image-icon-27.png?fit=500%2C500&ssl=1" alt="User" width="150px"/>
+                                <input type="file" accept="image/JPEG, image/png, image/jpg" id="input-file" />
+                                <label htmlFor="input-file" id="update-img">Update</label>
+                            </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
         <button type="submit">Sign Up</button>
       </form>
