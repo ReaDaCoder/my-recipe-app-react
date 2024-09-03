@@ -4,40 +4,36 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function HomePage(){
     return(
         <div className="homepage">
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <img src="recipe-log.PNG" alt="logo for the recipe app" width="70px" />
-  <a className="navbar-brand" href="#">RecipeNest</a>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
-
-  <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul className="navbar-nav mr-auto">
-      <li className="nav-item active">
-        <a className="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Link</a>
-      </li>
+               <nav className="navbar navbar-expand-lg bg-body-white border-bottom box-shadow">
+  <div className="container">
+    <Link className="navbar-brand" to="/"> 
+      <img src="recipe-log.PNG" width="50px" className="me-2"/>Recipe Nest</Link>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <li className="nav-item">
+          <Link className="nav-link text-dark" aria-current="page" to="/Home">Home</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link text-dark" to="/Contact.js">Contact</Link>
+        </li>
+      </ul>
+      <ul className="navbar-nav">
       <li className="nav-item dropdown">
-        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a className="dropdown-item" href="#">Action</a>
-          <a className="dropdown-item" href="#">Another action</a>
-          <div className="dropdown-divider"></div>
-          <a className="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form className="form-inline my-2 my-lg-0">
-      <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-      <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+          <a className="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin
+          </a>
+          <ul className="dropdown-menu">
+            <li><Link className="dropdown-item" to="/Products">Products</Link></li>
+            <li><Link className="dropdown-item" to="/Profile">Profile</Link></li>
+            <li><hr className="dropdown-divider"/></li>
+            <li><Link className="dropdown-item" to="/Logout">Logout</Link></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 <h2>Recent Recipe</h2>

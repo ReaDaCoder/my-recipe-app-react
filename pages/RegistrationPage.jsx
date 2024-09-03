@@ -3,13 +3,15 @@ import React, { useEffect, useState } from "react";
 function RegistrationPage(){
     const [addUser, setAddUser] = useState();
 
-    ev.preventDefault();
-    let user = {
-        name: ev.target.form.name.value,
-        surname: ev.target.form.surname.value,
-        email: ev.target.form.email.value,
-        cell: ev.target.form.password.value
-    };
+    function AddUser(ev){
+        ev.preventDefault(ev);
+        let user = {
+            name: ev.target.form.name.value,
+            surname: ev.target.form.surname.value,
+            email: ev.target.form.email.value,
+            cell: ev.target.form.password.value
+        };
+    }
 return(
     <div className="signup-box">
         <h1>Sign up</h1>
@@ -19,7 +21,7 @@ return(
             <input type="text" placeholder="Email"/><br/>
             <input type="text" placeholder="Password"/><br/>
             <input type="text" placeholder="Confirm Password"/><br/>
-            <button onClick={registerUser}>Sign Up</button>
+            <button onClick={AddUser}>Sign Up</button>
         </form>
     </div>
 );
