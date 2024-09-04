@@ -14,3 +14,11 @@ GET
  -email
  -Password and password confirmation
  -image
+
+ //USESTATE
+ SET 
+ useState for registration info
+ useState for login info
+ useState for recipe details
+
+//FUNCTIONS
