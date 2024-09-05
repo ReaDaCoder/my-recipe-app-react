@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../src/App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 function RegistrationPage() {
   const [user, setUser] = useState({

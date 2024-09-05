@@ -55,7 +55,11 @@ export default function AddRecipePage(){
             <input type="text" placeholder="Preparation Time"onChange={(e) => setPreparationTime(e.target.value)}/><br/>
             <input type="text" placeholder="Cooking Time (mins)"onChange={(e) => setCookingTime(e.target.value)}/><br/>
             <input type="text" placeholder="Servings"onChange={(e) => setServings(e.target.value)}/><br/>
-            <button onClick={AddRecipe} type="submit">Add Recipe</button>
+            <div className="card">
+                 <input type="file" accept="image/JPEG, image/png, image/jpg" id="input-file" />
+                 <label htmlFor="input-file" id="update-img">Update</label>
+              </div>
+              <button onClick={AddRecipe} type="submit">Add Recipe</button>
         </form>
 
         <Table.Body>

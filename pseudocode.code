@@ -21,4 +21,35 @@ GET
  useState for login info
  useState for recipe details
 
+ //USEEFFECT 
+ -Call axios to get data from json server
+
 //FUNCTIONS
+
+Arrow function
+-use axios to post data to the server
+END
+
+FUNCTION
+-prevent default behaviour
+call post data function
+END
+
+FUNCTION
+-get user registration info
+-prevent default behaviour
+-
+END
+
+FUNCTION
+-add user
+-prevent default behaviour
+IF 
+   password !== cornfirmPassword
+RETURN  
+     "password do not match"
+GET 
+USER input  
+ END 
+
+FUNCTION 
