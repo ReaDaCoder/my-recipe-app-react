@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Table, Button } from 'semantic-ui-react';
 import axios from 'axios';
 import { useNavigate, Link} from 'react-router-dom';
+import AddRecipe from './AddedRecipes';
 
 export default function AddRecipePage(){
 
@@ -27,6 +28,11 @@ export default function AddRecipePage(){
 }
 
 const setData = (data) => {
+  let { id, firstName, lastName, checkbox } = data;
+  localStorage.setItem('ID', id);
+  localStorage.setItem('First Name', firstName);
+  localStorage.setItem('Last Name', lastName);
+  localStorage.setItem('Checkbox Value', checkbox)
   console.log(data);
 }
 
@@ -92,6 +98,7 @@ const onDelete = (id) => {
        </Table.Row><Button onClick={() => onDelete(data.id)}>Delete</Button></>
    )})}
 </Table.Body>
+<AddRecipe/>
     </div>
   )
 }
