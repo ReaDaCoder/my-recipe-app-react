@@ -15,6 +15,18 @@ export default function AddRecipePage(){
         })
 }, [])
 
+useEffect(() => {
+  setID(localStorage.getItem('ID'))
+  setRecipeName(localStorage.getItem('Recipe Name'));
+  setIngredients(localStorage.getItem('Ingredients'));
+  setInstructions(localStorage.getItem('Instructions'))
+  setCategory(localStorage.getItem('Category'));
+  setPreparationTime(localStorage.getItem('Preparation Time'));
+  setCookingTime(localStorage.getItem('Cooking Time'));
+  setServings(localStorage.getItem('Servings'));
+}, []);
+
+
   const postData = () =>{
     axios.post('http://localhost:3000/recipes', {
       recipeName,
@@ -28,11 +40,15 @@ export default function AddRecipePage(){
 }
 
 const setData = (data) => {
-  let { id, firstName, lastName, checkbox } = data;
+  let { id, recipeName, Ingredients, instructions, category, preparationTime, cookingTime, servings } = data;
   localStorage.setItem('ID', id);
-  localStorage.setItem('First Name', firstName);
-  localStorage.setItem('Last Name', lastName);
-  localStorage.setItem('Checkbox Value', checkbox)
+  localStorage.setItem('Recipe Name', recipeName);
+  localStorage.setItem('Ingredients', Ingredients);
+  localStorage.setItem('Instructions', instructions)
+  localStorage.setItem('Category', category);
+  localStorage.setItem('Preparation Time', preparationTime);
+  localStorage.setItem('Cooking Time', cookingTime);
+  localStorage.setItem('Servings', servings);
   console.log(data);
 }
 
@@ -60,6 +76,7 @@ const onDelete = (id) => {
     const [preparationTime, setPreparationTime] = useState('');
     const [cookingTime, setCookingTime] = useState('');
     const [servings, setServings] = useState('');
+    const [id, setID] = useState(null);
 
   return(
     <div className="addrecipe">
