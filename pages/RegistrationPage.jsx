@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState, useEffect} from 'react';
 import "../src/App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
@@ -45,6 +45,21 @@ function RegistrationPage() {
       confirmPassword: "",
     });
   }
+
+  useEffect(() => {
+    setID(localStorage.getItem('ID'));
+    setUser(localStorage.getItem('User'))
+  }, []);
+
+  const postData = () =>{
+    axios.post('http://localhost:3000/users', {
+      name: "",
+      surname: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+  })
+}
 
   return (
     <div className="signup-box">

@@ -1,7 +1,7 @@
 import React from "react";
 import { Table, Button } from 'semantic-ui-react';
 import axios from 'axios';
-import AddRecipePage from './AddedRecipePage';
+//import AddRecipePage from './AddedRecipePage';
 
 
 export default function AddRecipe(){

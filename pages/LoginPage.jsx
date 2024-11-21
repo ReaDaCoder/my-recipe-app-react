@@ -4,7 +4,13 @@ import { useNavigate, Link} from 'react-router-dom';
 
 export default function LoginPage(){ 
   function handleLogin(){
+    ev.preventDefault();
     
+  
+    if (user.password !== user.confirmPassword) {
+      setError("Passwords do not match!");
+      return;
+    }
   }
     return(
         <div className="loginpage">
