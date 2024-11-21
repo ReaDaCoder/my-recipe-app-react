@@ -2,7 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate, Link} from 'react-router-dom';
 
-export default function HomePage(){ 
+export default function LoginPage(){ 
   function handleLogin(){
     
   }

@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import LoginPage from '../pages/LoginPage';
 import RegistrationPage from '../pages/RegistrationPage';
@@ -10,6 +8,7 @@ import ProtectedRoutes from '../pages/ProtectedRoutes';
 import AddRecipePage from '../pages/AddRecipePage';
 import AddRecipe from '../pages/AddedRecipes';
 import Update from '../pages/Update';
+import 'semantic-ui-css/semantic.min.css';
 
 function App() {
   const [count, setCount] = useState(0)
