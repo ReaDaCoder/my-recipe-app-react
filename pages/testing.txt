@@ -1,0 +1,156 @@
+
+// import React, {useState, useEffect} from 'react';
+// import "../src/App.css";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import axios from 'axios';
+
+// function RegistrationPage() {
+//   const [name, setName] = useState('');
+//   const [surname, setSurname] = useState('');
+//   const [email, setEmail] = useState('');
+//   const [role, setRole] = useState('');
+//   const [password, setPassword] = useState('');
+//   const [confirmPassword, setConfirmPassword] = useState('');
+//   const [id, setID] = useState(null);
+
+//   const AddUser = (e) => {
+//     e.preventDefault();
+//     // if (user.password !== user.confirmPassword) {
+//     //       setError("Passwords do not match!");
+//     //       return;
+//     //      }
+//     console.log("Name: ", name);
+//     console.log("Surname: ", surname);
+//     console.log("Email: ", email);
+//     console.log("Password: ", password);
+//     console.log("Confirm: ", confirmPassword);
+//     postData();
+//   }
+
+//   const [apiData, setApiData] = useState([]);
+
+//   useEffect(() => {
+//     axios.get(`http://localhost:3000/recipes`)
+//         .then((response) => {
+//             setApiData(response.data);
+//         })
+// }, [])
+
+//   // const [user, setUser] = useState({
+//   //   name: "",
+//   //   surname: "",
+//   //   email: "",
+//   //   password: "",
+//   //   confirmPassword: "",
+//   // });
+
+//   const setData = (data) => {
+//     let { id, name, surname, email, role, password, confirmPassword} = data;
+//     localStorage.setItem('ID', id);
+//     localStorage.setItem('name', name);
+//     localStorage.setItem('surname', surname);
+//     localStorage.setItem('email', email)
+//     localStorage.setItem('role', role);
+//     localStorage.setItem('password', password);
+//     localStorage.setItem('confirmpassord', confirmPassword);
+//     console.log(data);
+//   }
+
+//   const [error, setError] = useState("");
+
+//   function handleInputChange(ev) {
+//     const { name, value } = ev.target;
+//     setUser((prevUser) => ({
+//       ...prevUser,
+//       [name]: value,
+//     }));
+//   }
+
+
+
+//   useEffect(() => {
+//     setID(localStorage.getItem('ID'));
+//     setName(localStorage.getItem('name'));
+//     setEmail(localStorage.getItem('email'));
+//     setRole(localStorage.getItem('role'));
+//     setPassword(localStorage.getItem('password'));
+//     setConfirmPassword(localStorage.getItem('confirmed Password'));
+    
+//   }, []);
+
+//   const postData = () =>{
+//     axios.post('http://localhost:3000/users', {
+//       name,
+//       surname,
+//       email,
+//       password,
+//       confirmPassword
+//   });
+// }
+
+
+//   return (
+//     <div className="signup-box">
+//       <h1>Sign up</h1>
+//       <form onSubmit={AddUser}>
+//         <input
+//           type="text"
+//           name="name"
+//           placeholder="First Name"
+//           //value={user.name}
+//           onChange={(e) => setName(e.target.value)}
+//           required
+//         /><br/>
+//         <input
+//           type="text"
+//           name="surname"
+//           placeholder="Last Name"
+//           //value={user.surname}
+//           onChange={(e) => setSurname(e.target.value)}
+//           required
+//         /><br/>
+//         <input
+//           type="email"
+//           name="email"
+//           placeholder="Email"
+//           //value={user.email}
+//           onChange={(e) => setEmail(e.target.value)}
+//           required
+//         /><br/>
+//          <input
+//           type="role"
+//           name="role"
+//           placeholder="Role"
+//           //value={user.email}
+//           onChange={(e) => setRole(e.target.value)}
+//           required
+//         /><br/>
+//         <input
+//           type="password"
+//           name="password"
+//           placeholder="Password"
+//           //value={user.password}
+//           onChange={(e) => setPassword(e.target.value)}
+//           required
+//         /><br/>
+//         <input
+//           type="password"
+//           name="confirmPassword"
+//           placeholder="Confirm Password"
+//           //value={user.confirmPassword}
+//           onChange={(e) => setConfirmPassword(e.target.value)}
+//           required
+//         /><br/>
+//         <div className="card">
+//                                 <img src="https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/3da39-no-user-image-icon-27.png?fit=500%2C500&ssl=1" alt="User" width="150px"/>
+//                                 <input type="file" accept="image/JPEG, image/png, image/jpg" id="input-file" />
+//                                 <label htmlFor="input-file" id="update-img">Update</label>
+//                             </div>
+//         {error && <p style={{ color: "red" }}>{error}</p>}
+//         <button onClick={AddUser} type="submit">Sign Up</button>
+//       </form>
+//     </div>
+//   );
+// }
+
+// export default RegistrationPage;
