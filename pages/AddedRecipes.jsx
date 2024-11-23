@@ -1,10 +1,18 @@
-import React from "react";
+import React, {useState, useEffect} from 'react';
 import { Table, Button } from 'semantic-ui-react';
 import axios from 'axios';
 //import AddRecipePage from './AddedRecipePage';
 
 
-export default function AddRecipe(){
+export default function AddedRecipes(){
+  const [apiData, setApiData] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:3000/recipes`)
+        .then((response) => {
+            setApiData(response.data);
+        })
+}, [])
     return(
         <div>
             <Table.Body>

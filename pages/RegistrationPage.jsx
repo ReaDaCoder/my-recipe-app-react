@@ -1,65 +1,50 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import "../src/App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 function RegistrationPage() {
-  const [user, setUser] = useState({
-    name: "",
-    surname: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [email, setEmail] = useState('');
+  const [role, setRole] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const [error, setError] = useState("");
+  const AddUser = (e) => {
+    e.preventDefault();
 
-  function handleInputChange(ev) {
-    const { name, value } = ev.target;
-    setUser((prevUser) => ({
-      ...prevUser,
-      [name]: value,
-    }));
-  }
-
-  function AddUser(ev) {
-    ev.preventDefault();
-    
-  
-    if (user.password !== user.confirmPassword) {
+    if (password !== confirmPassword) {
       setError("Passwords do not match!");
       return;
     }
-    
-  
-    setError("");
 
+    const newUser = { name, surname, email, role, password, confirmPassword };
 
-    console.log("User registered:", user);
+    // Save data to local storage
+    localStorage.setItem('name', name);
+    localStorage.setItem('surname', surname);
+    localStorage.setItem('email', email);
+    localStorage.setItem('role', role);
+    localStorage.setItem('password', password);
+    localStorage.setItem('confirmPassword', confirmPassword);
 
-    setUser({
-      name: "",
-      surname: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    });
-  }
-
-  useEffect(() => {
-    setID(localStorage.getItem('ID'));
-    setUser(localStorage.getItem('User'))
-  }, []);
-
-  const postData = () =>{
-    axios.post('http://localhost:3000/users', {
-      name: "",
-      surname: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-  })
-}
+    // Send data to the backend
+    axios.post("http://localhost:3000/users", newUser)
+      .then(() => {
+        console.log("User registered successfully!");
+        // Clear the form fields after successful registration
+        setName('');
+        setSurname('');
+        setEmail('');
+        setRole('');
+        setPassword('');
+        setConfirmPassword('');
+        setError(''); // Reset error
+      })
+      .catch((error) => console.error("Error registering user:", error));
+  };
 
   return (
     <div className="signup-box">
@@ -67,49 +52,55 @@ function RegistrationPage() {
       <form onSubmit={AddUser}>
         <input
           type="text"
-          name="name"
           placeholder="First Name"
-          value={user.name}
-          onChange={handleInputChange}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           required
-        /><br/>
+        /><br />
         <input
           type="text"
-          name="surname"
           placeholder="Last Name"
-          value={user.surname}
-          onChange={handleInputChange}
+          value={surname}
+          onChange={(e) => setSurname(e.target.value)}
           required
-        /><br/>
+        /><br />
         <input
           type="email"
-          name="email"
           placeholder="Email"
-          value={user.email}
-          onChange={handleInputChange}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
-        /><br/>
+        /><br />
+        <input
+          type="text"
+          placeholder="Role"
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
+          required
+        /><br />
         <input
           type="password"
-          name="password"
           placeholder="Password"
-          value={user.password}
-          onChange={handleInputChange}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           required
-        /><br/>
+        /><br />
         <input
           type="password"
-          name="confirmPassword"
           placeholder="Confirm Password"
-          value={user.confirmPassword}
-          onChange={handleInputChange}
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
           required
-        /><br/>
+        /><br />
         <div className="card">
-                                <img src="https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/3da39-no-user-image-icon-27.png?fit=500%2C500&ssl=1" alt="User" width="150px"/>
-                                <input type="file" accept="image/JPEG, image/png, image/jpg" id="input-file" />
-                                <label htmlFor="input-file" id="update-img">Update</label>
-                            </div>
+          <img
+            src="https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/3da39-no-user-image-icon-27.png?fit=500%2C500&ssl=1"
+            alt="User"
+            width="150px"
+          />
+          <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
+          <label htmlFor="input-file" id="update-img">Update</label>
+        </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
         <button type="submit">Sign Up</button>
       </form>
@@ -121,39 +112,21 @@ export default RegistrationPage;
 
 
 
+  // function AddUser(ev) {
+  //   ev.preventDefault();
+  //   if (user.password !== user.confirmPassword) {
+  //     setError("Passwords do not match!");
+  //     return;
+  //   }
+  //   setError("");
+  //   console.log("User registered:", user);
+  //   setUser({
+  //     name: "",
+  //     surname: "",
+  //     email: "",
+  //     role:"",
+  //     password: "",
+  //     confirmPassword: "",
+  //   });
+  // }
 
-
-
-
-
-/*import React, { useEffect, useState } from "react";
-
-function RegistrationPage(){
-    const [addUser, setAddUser] = useState();
-
-    function AddUser(ev){
-        ev.preventDefault(ev);
-        let user = {
-            name: ev.target.form.name.value,
-            surname: ev.target.form.surname.value,
-            email: ev.target.form.email.value,
-            cell: ev.target.form.password.value
-        };
-    }
-return(
-    <div className="signup-box">
-        <h1>Sign up</h1>
-        <form>
-            <input type="text" placeholder="First Name"/><br/>
-            <input type="text" placeholder="Last Name"/><br/>
-            <input type="text" placeholder="Email"/><br/>
-            <input type="text" placeholder="Password"/><br/>
-            <input type="text" placeholder="Confirm Password"/><br/>
-            <button onClick={AddUser}>Sign Up</button>
-        </form>
-    </div>
-);
-
-
-}
-export default RegistrationPage*/

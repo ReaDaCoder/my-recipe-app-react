@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-rou
 import HomePage from '../pages/HomePage';
 import ProtectedRoutes from '../pages/ProtectedRoutes';
 import AddRecipePage from '../pages/AddRecipePage';
-import AddRecipe from '../pages/AddedRecipes';
+import AddedRecipes from '../pages/AddedRecipes';
 import Update from '../pages/Update';
 import 'semantic-ui-css/semantic.min.css';
 
@@ -22,7 +22,7 @@ function App() {
           <Route element={<ProtectedRoutes/>}/>
           <Route element={<HomePage/>} path="/HomePage"/>
           <Route element={<AddRecipePage/>} path="/AddRecipePage"/>
-          <Route element={<AddRecipe/>} path="/AddedRecipe"/>
+          <Route element={<AddedRecipes/>} path="/AddedRecipes"/>
           <Route element={<Update/>} path="/Update"/>
         </Routes>
         </BrowserRouter>
