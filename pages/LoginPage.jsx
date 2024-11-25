@@ -3,14 +3,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate, Link} from 'react-router-dom';
 
 export default function LoginPage(){ 
+  const navigate = useNavigate();
+
   function handleLogin(){
     ev.preventDefault();
+    navigate('/pages/AddedRecipes.jsx')
     
   
-    if (user.password !== user.confirmPassword) {
-      setError("Passwords do not match!");
-      return;
-    }
+    // if (user.password !== user.confirmPassword) {
+    //   setError("Passwords do not match!");
+    //   return;
+    // }
   }
     return(
         <div className="loginpage">
