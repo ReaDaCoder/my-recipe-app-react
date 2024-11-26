@@ -1,44 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate, Link} from 'react-router-dom';
+//import '../App.css';
 
 export default function LoginPage(){ 
   const navigate = useNavigate();
 
-  function handleLogin(){
-    ev.preventDefault();
-    navigate('/pages/AddedRecipes.jsx')
-    
-  
-    // if (user.password !== user.confirmPassword) {
-    //   setError("Passwords do not match!");
-    //   return;
-    // }
+  const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+
+
+  const ProceedLogin = (e) => {
+    e.preventDefault();
+    if(validation()){
+
+      fetch("http://localhost:3000/user/"+email).then((res)=>{
+        return res.json();
+      }).then((resp)=>{
+        console.log(resp);
+        if(Object.keys(resp).length === 0){
+          alert('Please enter valid user');
+        }else{
+          if(resp.password === password){
+            navigate('/src/pages/HomePage.jsx');
+          }else{
+            alert('Please enter valid credentails');
+          }
+        }
+      }).catch((err)=>{
+        alert('Login failed due to : '+err.message);
+      })
+
+    }
   }
+
+  const validation=()=>{
+  let result =true;
+  if(email === '' || email === null){
+    result = false;
+    alert("Please enter your email");
+  }
+  if(password === '' || password === null){
+    result = false;
+    alert("Please enter your name");
+  }
+  return result;
+  }
+
     return(
         <div className="loginpage">
             <div className="container text-center">
   <div className="row">
     <div className="col">
-      <img src="recipe-app-img.jpg" alt="recipe img" width="400px" height="500"/>
+    <img src="recipe-app-img.jpg" alt="recipe img" width="400px" height="500"/>
     </div>
     <div className="col">
       <h1>Log in</h1>
-      <form>
+      <form onSubmit={ProceedLogin}>
   <div className="mb-3">
     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+    <input value={email} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value)} />
     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-    <input type="password" className="form-control" id="inputPassword1" />
+    <input value={password} type="password" className="form-control" id="inputPassword1" onChange={(e) => setPassword(e.target.value)} />
   </div>
-  <div className="mb-3 form-check">
-    <input type="checkbox" className="form-check-input" id="check1" />
-    <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" className="btn btn-primary" onClick={handleLogin}>Submit</button>
+  <button type="submit" className="btn btn-primary" onClick={ProceedLogin}>Submit</button>
 </form>
 <Link to="RegistrationPage">Don't have an account : Sign Up</Link>
     </div>
@@ -47,3 +75,62 @@ export default function LoginPage(){
         </div>
     );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export default function LoginPage(){ 
+//   const navigate = useNavigate();
+
+//   function handleLogin(){
+//     ev.preventDefault();
+//     navigate('/pages/AddedRecipes.jsx')
+//     if (user.password !== user.confirmPassword) {
+//       setError("Passwords do not match!");
+//       return;
+//     }
+//   }
+//     return(
+//         <div className="loginpage">
+//             <div className="container text-center">
+//   <div className="row">
+//     <div className="col">
+//       <img src="recipe-app-img.jpg" alt="recipe img" width="400px" height="500"/>
+//     </div>
+//     <div className="col">
+//       <h1>Log in</h1>
+//       <form>
+//   <div className="mb-3">
+//     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+//     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+//     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+//   </div>
+//   <div className="mb-3">
+//     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+//     <input type="password" className="form-control" id="inputPassword1" />
+//   </div>
+//   <div className="mb-3 form-check">
+//     <input type="checkbox" className="form-check-input" id="check1" />
+//     <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+//   </div>
+//   <button type="submit" className="btn btn-primary" onClick={handleLogin}>Submit</button>
+// </form>
+// <Link to="RegistrationPage">Don't have an account : Sign Up</Link>
+//     </div>
+//   </div>
+// </div>
+//         </div>
+//     );
+// }

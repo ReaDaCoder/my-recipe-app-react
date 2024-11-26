@@ -52,9 +52,17 @@ const setData = (data) => {
   console.log(data);
 }
 
+// const onDelete = (id) => {
+//   axios.delete(`http://localhost:3000/recipes`)
+// }
+
 const onDelete = (id) => {
-  axios.delete(`http://localhost:3000/recipes`)
-}
+  axios.delete(`http://localhost:3000/recipes/${id}`)
+       .then(() => {
+           setApiData(apiData.filter(recipe => recipe.id !== id));
+       })
+       .catch((error) => console.error('Error deleting recipe:', error));
+};
 
   const AddRecipe = (e) => {
     //e.preventDefault();
