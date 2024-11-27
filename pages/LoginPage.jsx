@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate, Link} from 'react-router-dom';
-import '../App.css';
 
 export default function LoginPage(){ 
   const navigate = useNavigate();
@@ -59,7 +58,7 @@ const [password, setPassword] = useState("");
             <div className="container text-center">
   <div className="row">
     <div className="col">
-    <img src="Fox Trot.jpg" alt="recipe img" width="400px" height="500"/>
+    <img src="recipe-app-img.jpg" alt="recipe img" width="400px" height="500"/>
     </div>
     <div className="col">
       <h1>Log in</h1>
