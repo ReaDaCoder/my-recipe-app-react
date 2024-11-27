@@ -52,10 +52,6 @@ const setData = (data) => {
   console.log(data);
 }
 
-// const onDelete = (id) => {
-//   axios.delete(`http://localhost:3000/recipes`)
-// }
-
 const onDelete = (id) => {
   axios.delete(`http://localhost:3000/recipes/${id}`)
        .then(() => {

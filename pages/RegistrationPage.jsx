@@ -22,7 +22,6 @@ function RegistrationPage() {
 
     const newUser = { name, surname, email, role, password, confirmPassword };
 
-    // Save data to local storage
     localStorage.setItem('name', name);
     localStorage.setItem('surname', surname);
     localStorage.setItem('email', email);
