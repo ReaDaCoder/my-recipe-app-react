@@ -25,14 +25,34 @@ const [password, setPassword] = useState("");
         if (resp.length === 0){
           alert('Please enter valid user');
         }else {
-          const user = resp[0]; 
-
-          if (user.password === password) {
+          let found = false; 
+          for (let i = 0; i < resp.length; i++) {
+            const user = resp[i];
+        
+            if (user.password === password) {
               navigate('/AddededRecipes');
-          } else {
-              alert('Please enter valid credentials');
+              found = true;
+              break; 
+            }
+          }
+        
+          if (!found) {
+            alert('Please enter valid credentials');
           }
         }
+        
+        
+        //else {
+        //   resp = 0;
+        //   while(resp<Object.length){
+        //     if (resp.password === password) {
+              
+        //       navigate('/AddededRecipes');
+        //    } else {
+        //          alert('Please enter valid credentials');
+        //       }
+        //    }
+        // }
       }).catch((err)=>{
         alert('Login failed due to : '+err.message);
       });

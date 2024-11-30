@@ -382,6 +382,14 @@
       "role": "admin",
       "password": "123456",
       "confirmPassword": "123456"
+    },
+    {
+      "id": "b75e",
+      "name": "Giveness",
+      "surname": "Rg",
+      "email": "giveness@gmail.com",
+      "password": "5678910",
+      "confirmPassword": "5678910"
     }
   ],
   "admin": []
