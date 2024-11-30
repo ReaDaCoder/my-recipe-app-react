@@ -23,7 +23,7 @@ export default function RegistrationPage(){
         confirmPassword
       }).then((res)=>{
         alert('Registered Successfully')
-        navigate('/src/pages/HomePage');
+        navigate('/HomePage');
       }).catch((err)=>{
         alert('Failed to register user due to :'+ err.message);
       });

@@ -28,7 +28,7 @@ const [password, setPassword] = useState("");
           const user = resp[0]; 
 
           if (user.password === password) {
-              navigate('/HomePage');
+              navigate('/AddededRecipes');
           } else {
               alert('Please enter valid credentials');
           }

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React from 'react'
 import './App.css'
 import LoginPage from '../pages/LoginPage';
 import RegistrationPage from '../pages/RegistrationPage';
@@ -8,10 +8,8 @@ import ProtectedRoutes from '../pages/ProtectedRoutes';
 import AddRecipePage from '../pages/AddRecipePage';
 import AddedRecipes from '../pages/AddedRecipes';
 import Update from '../pages/Update';
-import 'semantic-ui-css/semantic.min.css';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
