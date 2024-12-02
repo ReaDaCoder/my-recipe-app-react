@@ -98,15 +98,15 @@ const onDelete = (id) => {
               <button onClick={AddRecipe} type="submit">Add Recipe</button>
               <button onClick={() => setData(data)}>Update</button>
         </form>
-{/* 
+
         <Table.Body>
   {apiData.map((data) => {
      return (
        <><Table.Row>
          <Table.Cell>{data.recipeName}</Table.Cell>
          <Table.Cell>{data.Ingredients}</Table.Cell>
-         <Table.Cell>{data.instructions}</Table.Cell> */}
-         {/* <Table.Cell>{data.category}</Table.Cell>
+         <Table.Cell>{data.instructions}</Table.Cell>
+         <Table.Cell>{data.category}</Table.Cell>
          <Table.Cell>{data.preparationTime}</Table.Cell>
          <Table.Cell>{data.cookingTime}</Table.Cell>
          <Table.Cell>{data.servings}</Table.Cell>
@@ -118,7 +118,7 @@ const onDelete = (id) => {
        </Table.Row><Button onClick={() => onDelete(data.id)}>Delete</Button></>
    )})}
 </Table.Body>
-<AddRecipe/> */}
+<AddRecipe/>
     </div>
   )
 }

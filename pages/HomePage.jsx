@@ -42,7 +42,7 @@ export default function HomePage(){
     </form>
   </div>
 </nav>
-<h2>Recent Recipe</h2>
+<h2>Recent Recipes</h2>
 <div className="cnol">
       2 of 2
     </div>
