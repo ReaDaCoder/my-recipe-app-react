@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-rou
 import HomePage from '../pages/HomePage';
 import ProtectedRoutes from '../pages/ProtectedRoutes';
 import AddRecipePage from '../pages/AddRecipePage';
-import AddedRecipes from '../pages/AddedRecipes';
+// import AddedRecipes from '../pages/AddedRecipes';
 import Update from '../pages/Update';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
           <Route element={<ProtectedRoutes/>}/>
           <Route element={<HomePage/>} path="/HomePage"/>
           <Route element={<AddRecipePage/>} path="/AddRecipePage"/>
-          <Route element={<AddedRecipes/>} path="/AddedRecipes"/>
+          {/* <Route element={<AddedRecipes/>} path="/AddedRecipes"/> */}
           <Route element={<Update/>} path="/Update"/>
         </Routes>
         </BrowserRouter>
