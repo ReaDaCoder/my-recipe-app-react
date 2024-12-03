@@ -60,6 +60,7 @@ const onDelete = (id) => {
 };
 
   const AddRecipe = (e) => {
+    
     //e.preventDefault();
     console.log("Recipe Name:", recipeName);
     console.log("Ingredients:", Ingredients);
@@ -99,7 +100,7 @@ const onDelete = (id) => {
               <button onClick={() => setData(data)}>Update</button>
         </form>
 
-        <Table.Body>
+        {/* <Table.Body>
   {apiData.map((data) => {
      return (
        <><Table.Row>
@@ -118,7 +119,7 @@ const onDelete = (id) => {
        </Table.Row><Button onClick={() => onDelete(data.id)}>Delete</Button></>
    )})}
 </Table.Body>
-<AddRecipe/>
+<AddRecipe/> */}
     </div>
   )
 }

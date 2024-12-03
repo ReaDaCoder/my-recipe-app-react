@@ -30,7 +30,7 @@ const [password, setPassword] = useState("");
             const user = resp[i];
         
             if (user.password === password) {
-              navigate('/AddededRecipes');
+              navigate('/AddedRecipes');
               found = true;
               break; 
             }

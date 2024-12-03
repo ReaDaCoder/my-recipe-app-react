@@ -20,7 +20,8 @@ export default function AddedRecipes(){
   useEffect(() => {
     axios.get(`http://localhost:3000/recipes`)
         .then((response) => {
-            setApiData(response.data);
+            console.log(response)
+           setApiData(response.data);
         })
 }, [])
     return(
